@@ -1,0 +1,25 @@
+{
+  "name": "adminrole",
+  "description": "Role to provision webserver directory",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[create_directory]"
+  ],
+  "env_run_lists": {
+    "prod": [
+      "recipe[create_directory::webserver_dev]",
+      "recipe[create_directory::webserver_prod]"
+    ],
+    "dev": [
+      "recipe[create_directory::webserver_dev]"
+    ]
+  }
+}
+

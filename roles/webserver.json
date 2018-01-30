@@ -1,0 +1,26 @@
+{
+  "name": "webserver",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[my_httpd]"
+  ],
+  "env_run_lists": {
+    "production": [
+      "recipe[my_httpd::default]",
+      "recipe[my_httpd::create_index]"
+    ],
+    "development": [
+      "recipe[my_httpd::default]",
+      "recipe[my_httpd::create_index]"
+    ]
+  }
+}
+

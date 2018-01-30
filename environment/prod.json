@@ -1,0 +1,21 @@
+{
+  "name": "prod",
+  "description": "Dev Environment",
+  "cookbook_versions": {
+    "create_directory": "0.1.0"
+  },
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+    "mydir": {
+      "name": "prod_dir"
+    },
+    "myfile": {
+      "name": "prod_config.txt"
+    }
+  }
+}
+
